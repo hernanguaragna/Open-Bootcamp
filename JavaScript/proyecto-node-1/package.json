@@ -1,0 +1,13 @@
+{
+  "name": "hola-mundo",
+  "version": "1.0.0",
+  "description": "proyecto de prueba",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "saludo": "Hola, este es mi primer ejercicio con Node en el mejor Bootcamp de programación del mundo"
+  },
+  "author": "Hernan Guaragna",
+  "license": "ISC"
+}
