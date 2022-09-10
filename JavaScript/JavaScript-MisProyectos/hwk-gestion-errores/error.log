@@ -1,0 +1,9 @@
+{"level":"error","message":"El valor de e es: Error: El valor debe ser de tipo número","service":"user-service"}
+{"level":"error","message":"ERROR!","service":"user-service"}
+{"level":"error","message":"El valor de e es: Error: El valor debe ser de tipo número","service":"user-service"}
+{"level":"error","message":"ERROR","service":"user-service"}
+{"level":"error","message":"El valor de e es: TypeError: Cannot create property 'Symbol(level)' on string 'Está ejecutándose de manera correcta'","service":"user-service"}
+{"level":"error","message":"ERROR!!","service":"user-service"}
+{"level":"error","message":"El valor de e es: TypeError: Cannot create property 'Symbol(level)' on string 'Está ejecutándose de manera correcta'","service":"user-service"}
+{"level":"error","message":"ERROR!!","service":"user-service"}
+{"level":"error","message":"ERROR lo atrapó el catch!!","service":"user-service"}
