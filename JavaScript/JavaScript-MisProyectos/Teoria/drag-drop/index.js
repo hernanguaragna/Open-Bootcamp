@@ -20,6 +20,7 @@ parrafos.forEach(parrafo => {
         parrafo.classList.remove("dragging")
     })
     
+    
 
 })
     
@@ -39,6 +40,7 @@ const id_parrafo = event.dataTransfer.getData("id")
 const parrafo = document.getElementById(id_parrafo)
 seccion.appendChild(parrafo)
     })
+    
     
    
 })
