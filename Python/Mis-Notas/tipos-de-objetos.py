@@ -29,14 +29,10 @@ type(tupla)
 SyntaxError: invalid syntax
 lista.append("queso")
 lista(print)
-Traceback (most recent call last):
-  File "<pyshell#20>", line 1, in <module>
-    lista(print)
-TypeError: 'list' object is not callable
+
 print(lista)
 ['a', 2, 4, 'hola', 'queso']
-para eliminar un caracter a una lista se utiliza .remove
-SyntaxError: invalid syntax
+
 lista.remove('queso')
 print(lista)
 ['a', 2, 4, 'hola']
