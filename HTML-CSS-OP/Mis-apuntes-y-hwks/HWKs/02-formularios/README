@@ -1,0 +1,19 @@
+Crea un nuevo documento HTML que cumpla los siguientes parámetros:
+
+El título debe ser "Ejercicio 02 - Formularios en HTML" OK
+
+El body debe contener un formulario que cumpla las siguientes características
+
+El atributo action será "/" ok
+
+Debe contener los siguientes campos:ok
+
+Un campo de texto llamado "nombre"ok
+
+Un campo numérico llamado "edad"ok
+
+Un campo de área de texto llamado "frase-favorita"ok
+
+Un botón de envío ok 
+
+Un botón de reset ok 
