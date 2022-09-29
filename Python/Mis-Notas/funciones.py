@@ -46,7 +46,7 @@ def saludar (nombre = "Amig@"):
 
 saludar()
 saludar("Nicolas")
-"""
+
 
 
 def suma(a, b, c):
@@ -59,12 +59,27 @@ def suma2(a=4,b=4,c=2):
 suma2()
 suma2(c=12)
 
-#parametros variables
+#parametros variables con numeros, se utiliza el *args
 def suma3(*args):
     resultado = 0
     for arg in args:
         resultado += arg
     print(resultado)
 suma3(2,2,2,2)
+"""
+#parametros con nombre **kwargs named parameters
 
-#parametros variavles de palabras (aca quede min 19.55)
+
+
+
+#def suma4(**kwargs):
+#    for key, value in kwargs.items():
+#        print(key, "=", value)
+#
+#suma4(vivienda = 'piso', auto = 'rojo')
+
+def suma(**kwargs):
+    if kwargs['coche']=='bonito':
+        print('Tu auto es bonito')
+
+suma(coche='bonito')
