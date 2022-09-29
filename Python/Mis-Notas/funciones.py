@@ -36,7 +36,7 @@ print(temperatura)
 # Poner como parametro un valor por defecto
 
 
-from random import Random, random
+
 
 
 def saludar (nombre = "Amig@"):
