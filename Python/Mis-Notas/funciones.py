@@ -122,3 +122,5 @@ print (suma(2))
 sumatoria= lambda x : x+x
 print(sumatoria(2))
 #las funciones lambda se usan cuando necesito hacer algo rapido y no es necesario escribir toda una funcion.
+
+
