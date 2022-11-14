@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos de Interés en Bootstrap</title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Jumbotron de Prueba</h1>
+            <p class="col-md-8 fs-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum atque, maiores soluta voluptates odio dolor. Molestiae sunt placeat unde quo nobis beatae explicabo, nihil illo repellendus nemo tempore labore laboriosam!
+
+            </p>
+            <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Modal
+                </button>
+
+        </div>
+    </div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">¡Hola!Soy un Modal. =D</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Escribe tu mensaje aquí...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Nombre:</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tu nombre aquí...">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Teléfono:</label>
+    <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Tu número de teléfono aqui...">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Mensaje:</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribe tu mensaje aquí..."></textarea>
+  </div>
+    
+  </div>
+  <div>
+    <div class="card text-bg-primary mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Hernán Guaragna</h5>
+              <p class="card-text">Programador Full Stack JavaScript, situado en Argentina con muchas ganas de progresar y aprender nuevas tecnologias constantemente, en busca de poder conseguir un trabajo remoto o presencial en Europa.</p>
+              <p class="card-text"><small>hernanguaragna@gmail.com</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})"></script>   
+</html>
