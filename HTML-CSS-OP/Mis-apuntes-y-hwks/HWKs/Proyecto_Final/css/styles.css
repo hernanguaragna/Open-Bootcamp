@@ -1,0 +1,18 @@
+.btn-main, .btn-sec, .btn-main-s {
+  background-color: #0075ff;
+  color: white;
+  padding: 0.25rem 1.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  border: solid 1px #0075ff;
+}
+.btn-main:hover, .btn-sec:hover, .btn-main-s:hover {
+  background-color: white;
+  color: #0075ff;
+}
+.btn-main-s {
+  font-size: 0.75rem;
+  padding: 0.1rem 1rem;
+}
+
+/*# sourceMappingURL=styles.css.map */
