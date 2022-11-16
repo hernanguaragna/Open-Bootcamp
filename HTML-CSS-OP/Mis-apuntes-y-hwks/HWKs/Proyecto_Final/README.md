@@ -4,4 +4,4 @@ En este proyecto realice un clone de la pagina coinbase, utilice maqueta de figm
 Para la realización del mismo puse a prueba mis conocimientos adquiridos en SASS para la agilización de la escritura del CSS, y en Bootstrap para utilizar clases y estilos.
 También al final del proyecto realice los cambios necesarios para hacerl la pagina responsiva con una configuracion para desktop, otra para tablets y por último para mobile.
 Para la realización me base en el Atomic Design.
-Hernán Guaragna.-
+HerNaN Guaragna.-
