@@ -123,6 +123,7 @@ let nuevoEstado = {
     session: 4
 }
 
+
 let edad = 4;
 
 let estudiante = {
