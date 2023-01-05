@@ -3,6 +3,7 @@ import './App.css';
 //import Greeting from './components/pures/greeting';
 //import GreetingF from './components/pures/greetingF';
 import TaskListComponent from './components/conteiner/task.list';
+import ContactoListComponent from './components/conteiner/contacto.list';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
        {/* <GreetingF name={"Hernán"} /> */}
        {/* Componente de Listado de Tareas */}
        <TaskListComponent />
+       <ContactoListComponent />
       </header>
     </div>
   );
