@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 //import Greeting from './components/pures/greeting';
-import GreetingF from './components/pures/greetingF';
+//import GreetingF from './components/pures/greetingF';
+import TaskListComponent from './components/conteiner/task.list';
 
 function App() {
   return (
@@ -10,7 +11,10 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
        {/* !aca voy a importar el componente Greeting */}
        {/* <Greeting name="Hernán"/> */}
-       <GreetingF name={"Hernán"} />
+       {/* Componente de ejemplo funcional */}
+       {/* <GreetingF name={"Hernán"} /> */}
+       {/* Componente de Listado de Tareas */}
+       <TaskListComponent />
       </header>
     </div>
   );
