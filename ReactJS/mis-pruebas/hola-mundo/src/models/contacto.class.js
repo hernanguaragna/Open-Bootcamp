@@ -9,15 +9,15 @@
 // Conectado: será un booleano que nos indicará si la persona está conectada o no.
 
 export class Contacto{
-    Nombre = "";
-    Apellido = "";
-    Email = "";
-    Conectado = false
+    nombre = "";
+    apellido = "";
+    email = "";
+    conectado = false;
 
-    constructor (Nombre,Apellido,Email,Conectado){
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
-        this.Email = Email;
-        this.Conectado = Conectado;
+    constructor (nombre,apellido,email,conectado){
+        this.Nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.conectado = conectado;
 }
 }

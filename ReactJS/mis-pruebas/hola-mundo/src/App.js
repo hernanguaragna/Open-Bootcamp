@@ -3,9 +3,15 @@ import './App.css';
 //import Greeting from './components/pures/greeting';
 //import GreetingF from './components/pures/greetingF';
 import TaskListComponent from './components/conteiner/task.list';
-import ContactoListComponent from './components/conteiner/contacto.list';
+import ComponenteA from './components/pures/forms/componenteA';
 
 function App() {
+  const contactoPrueba = {
+    nombre: 'Cosme',
+    apellido: 'Fulanito',
+    email: 'cosmefulanito@gmail.com',
+    conectado: false,
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -16,7 +22,7 @@ function App() {
        {/* <GreetingF name={"Hernán"} /> */}
        {/* Componente de Listado de Tareas */}
        <TaskListComponent />
-       <ContactoListComponent />
+       <ComponenteA contacto={contactoPrueba} />
       </header>
     </div>
   );
