@@ -6,7 +6,7 @@ function ComponenteB(estado) {
     const [conectado, setConectado] = useState(estado);
     return (
       <div>
-        <h3> {conectado === false ? 'Contacto No Disponible' : 'Contacto En Línea'}</h3>
+        <h3> {conectado === false ? 'Agente No Disponible' : 'Agente En Línea'}</h3>
         <button onClick={() => setConectado(!conectado)}>{conectado === false ? 'Conectado' : 'Desconectado'}</button>
       </div>
     );
