@@ -6,7 +6,7 @@
 
 import React, {useState} from 'react';
 
-const Ejemplo1 = () => {
+     const Ejemplo1 = () => {
 
     //valor inicial para un contador
     const valorInicial = 0;
@@ -30,11 +30,11 @@ const Ejemplo1 = () => {
     function incrementarContador(){
         //?funcionParaCambiar(nuevoValor)
         setContador(contador + 1)
-
+    }
     /**
      * *Funcion para actualizar un objeto
      */
-
+    
     function actualizarPersona (){
         setPersona(
     {        
@@ -48,8 +48,15 @@ const Ejemplo1 = () => {
     return (
         <div>
             <h1>***Ejemplo de useState()</h1>
+            <h2>CONTADOR: {contador}</h2>
+            <h2>DATOS DE LA PERSONA:</h2>
+            <h3>NOMBRE: {persona.nombre}</h3>
+            <h3>EMAIL: {persona.email}</h3>
+            {/* Bloque de botones para actualizar los estados */}
+            <button onClick={incrementarContador} >Incrementar Contador</button>
+            <button onClick={actualizarPersona}>Actualizar Persona</button>
         </div>
     );
 }
-
 export default Ejemplo1;
+
