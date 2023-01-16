@@ -2,7 +2,8 @@
 import './App.css';
 //import Greeting from './components/pures/greeting';
 //import GreetingF from './components/pures/greetingF';
-import TaskListComponent from './components/conteiner/task.list';
+// import TaskListComponent from './components/conteiner/task.list';
+import Ejemplo1 from './hooks/Ejemplo1';
 
 
 function App() {
@@ -16,8 +17,9 @@ function App() {
        {/* Componente de ejemplo funcional */}
        {/* <GreetingF name={"Hernán"} /> */}
        {/* Componente de Listado de Tareas */}
-       <TaskListComponent />
-       
+       {/* <TaskListComponent /> */}
+       {/*  Ejemplo de usos de HOOKS*/}
+       <Ejemplo1 />
       </header>
     </div>
   );
