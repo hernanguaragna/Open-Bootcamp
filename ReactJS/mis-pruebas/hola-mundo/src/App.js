@@ -1,9 +1,10 @@
 // import logo from './logo.svg';
 import './App.css';
+import Ejemplo2 from './hooks/Ejemplo2';
 //import Greeting from './components/pures/greeting';
 //import GreetingF from './components/pures/greetingF';
 // import TaskListComponent from './components/conteiner/task.list';
-import Ejemplo1 from './hooks/Ejemplo1';
+// import Ejemplo1 from './hooks/Ejemplo1';
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
        {/* Componente de Listado de Tareas */}
        {/* <TaskListComponent /> */}
        {/*  Ejemplo de usos de HOOKS*/}
-       <Ejemplo1 />
+       {/* <Ejemplo1 /> */}
+        <Ejemplo2 />
       </header>
     </div>
   );
