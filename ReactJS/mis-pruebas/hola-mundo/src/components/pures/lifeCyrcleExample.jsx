@@ -4,7 +4,7 @@
  */
 
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+
 
 class LifeCycleExample extends Component {
     
@@ -53,8 +53,6 @@ class LifeCycleExample extends Component {
     }
 }
 
-LifeCycleExample.propTypes = {
 
-}
 
 export default LifeCycleExample
