@@ -12,12 +12,41 @@ const TaskComponent = ({ task }) => {
 		};
 	}, [task]);
 	return (
-		<div>
-			<h2 className="task-name">Nombre: {task.name}</h2>
-			<h3>Descripcion: {task.description}</h3>
-			<h4>Nivel: {task.level}</h4>
-			<h5>This task is : {task.completed ? "COMPLETED" : "PENDING"}</h5>
-		</div>
+		<tr className="fw-normal">
+		<th>
+			<span className="ms-2">{task.name}</span>
+		</th>
+		<td className="aligne-middle">
+			<span>{task.description}</span>
+
+		</td>
+		<td className="aligne-middle">
+			<span>{task.level}</span>
+
+		</td>
+		<td className="aligne-middle">
+			<span>{task.completed}</span>
+
+		</td>
+
+		</tr>
+		// <div>
+		// 	<h2 className="task-name">
+		// 	Nombre: {task.name}
+		// 	</h2>
+
+		// 	<h3>
+		// 	Descripcion: {task.description}
+		// 	</h3>
+
+		// 	<h4>
+		// 	Nivel: {task.level}
+		// 	</h4>
+
+		// 	<h5>
+		// 	This task is : {task.completed ? "COMPLETED" : "PENDING"}
+		// 	</h5>
+		// </div>
 	);
 };
 
