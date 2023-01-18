@@ -1,5 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
+import Father from './components/conteiner/father';
 // import Ejemplo2 from './hooks/Ejemplo2';
 //import Greeting from './components/pures/greeting';
 //import GreetingF from './components/pures/greetingF';
@@ -27,7 +28,9 @@ function App() {
         {/* <MiComponenteConContexto /> */}
         {/* <GreetingStyled name = "Hernán"></GreetingStyled> */}
       {/* </header> */}
-      <TaskListComponent />
+      {/* Gestion de eventos */}
+      <Father />
+      {/* <TaskListComponent /> */}
     </div>
   );
 }

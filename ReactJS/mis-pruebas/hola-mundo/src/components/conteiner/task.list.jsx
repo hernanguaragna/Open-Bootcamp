@@ -69,7 +69,7 @@ const TaskListComponent = () => {
 						</thead>
 
 						<tbody>
-							{/* TODO iterar sobre una lista de tareas */}
+							{/*iterar sobre una lista de tareas */}
 							{tasks.map((task, index) => {
 								return <TaskComponent key={index} task={task}></TaskComponent>;
 							})}
