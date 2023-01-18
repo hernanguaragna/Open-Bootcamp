@@ -12,6 +12,52 @@ const TaskComponent = ({ task }) => {
 			console.log(`Task ${task.name} is going to`)
 		};
 	}, [task]);
+	
+	//*Funcion que devuelve un badge dependiendo del
+	//*nivel de la tarea
+
+	function taskIconLevelBadge(){
+		switch (task.level) {
+			case LEVELS.NORMAL:
+				return(
+					<h6 className="mb-0">
+					<span className="badge bg-primary">
+					{task.level}
+
+					</span>
+
+					</h6>)
+			case LEVELS.URGENT:
+				return(
+					<h6 className="mb-0">
+					<span className="badge bg-warning">
+					{task.level}
+
+					</span>
+
+					</h6>)
+			case LEVELS.BLOCKING:
+				return(
+					<h6 className="mb-0">
+					<span className="badge bg-danger">
+					{task.level}
+
+					</span>
+
+					</h6>
+				)
+				
+				default:
+					break;
+				}
+
+	}
+	//*funcion que retorna el swich del icono verde si la action esta hecha y gris si esta sin hacer.
+
+	const taskIconCompleted = () => (task.completed ? <i className="bi-toggle-on" style={{color: 'green'}}></i> : <i className="bi-toggle-off" style ={{color:'grey'}}></i>)
+	
+	
+	
 	return (
 		<tr className="fw-normal">
 		<th>
@@ -22,32 +68,17 @@ const TaskComponent = ({ task }) => {
 
 		</td>
 		<td className="align-middle">
-			<span>{task.level}</span>
+			{taskIconLevelBadge()}
 
 		</td>
 		<td className="align-middle">
-			<span>{task.completed ? "COMPLETED" : "PENDING"}</span>
-
+		{taskIconCompleted()}
+		<i className="bi-trash" style={{color: 'tomato'}}></i> 
+			
 		</td>
 
 		</tr>
-		// <div>
-		// 	<h2 className="task-name">
-		// 	Nombre: {task.name}
-		// 	</h2>
-
-		// 	<h3>
-		// 	Descripcion: {task.description}
-		// 	</h3>
-
-		// 	<h4>
-		// 	Nivel: {task.level}
-		// 	</h4>
-
-		// 	<h5>
-		// 	This task is : {task.completed ? "COMPLETED" : "PENDING"}
-		// 	</h5>
-		// </div>
+		
 	);
 };
 
