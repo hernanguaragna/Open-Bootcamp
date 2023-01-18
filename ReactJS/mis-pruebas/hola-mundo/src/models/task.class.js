@@ -1,15 +1,16 @@
 import { LEVELS } from "./levels.enum";
 
 export class Task {
-	name = "";
-	description = "";
-	complete = false;
-	lavel = LEVELS.NORMAL;
+    name = '';
+    description = '';
+    completed = false;
+    level = LEVELS.NORMAL;
 
-    constructor(name, description, complete, lavel) {
+    constructor(name, description, completed, level){
         this.name = name;
         this.description = description;
-        this.complete = complete;
-        this.lavel = lavel;
+        this.completed = completed;
+        this.level = level
     }
+
 }

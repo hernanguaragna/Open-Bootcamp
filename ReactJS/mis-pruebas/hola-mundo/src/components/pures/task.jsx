@@ -1,10 +1,11 @@
 import React,{useEffect} from "react";
 import PropTypes from "prop-types";
 import { Task } from "../../models/task.class";
+import { LEVELS } from '../../models/levels.enum';
 import "../../styles/task.scss"
 
 const TaskComponent = ({ task }) => {
-
+ 
 	useEffect(() => {
 		console.log('Created Task')
 		return () => {
@@ -16,16 +17,16 @@ const TaskComponent = ({ task }) => {
 		<th>
 			<span className="ms-2">{task.name}</span>
 		</th>
-		<td className="aligne-middle">
+		<td className="align-middle">
 			<span>{task.description}</span>
 
 		</td>
-		<td className="aligne-middle">
+		<td className="align-middle">
 			<span>{task.level}</span>
 
 		</td>
-		<td className="aligne-middle">
-			<span>{task.completed}</span>
+		<td className="align-middle">
+			<span>{task.completed ? "COMPLETED" : "PENDING"}</span>
 
 		</td>
 

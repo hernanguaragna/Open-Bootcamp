@@ -7,7 +7,7 @@ import "../../styles/task.scss";
 
 const TaskListComponent = () => {
 
-    const defaultTask = new Task("Example", "Default description", false,LEVELS.NORMAL);
+    const defaultTask = new Task("Example", "Default description", false, LEVELS.NORMAL);
   //*Estado del componente
 
     const [tasks, settasks] = useState(defaultTask);  
@@ -53,7 +53,7 @@ const TaskListComponent = () => {
                 </tr>
 
             </thead>
-            
+
             <tbody>
                 {/* TODO iterar sobre una lista de tareas */}
 
