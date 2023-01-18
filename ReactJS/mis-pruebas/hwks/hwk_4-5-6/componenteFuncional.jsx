@@ -22,10 +22,9 @@ const ClockFuncional = () => {
   
     const actualiceUser = () => {
       return setUser({
-        fecha: user.fecha,
+        ...user,
         edad: user.edad + 1,
-        nombre: user.nombre,
-        apellidos: user.apellidos,
+        
       });
     };
     return (
