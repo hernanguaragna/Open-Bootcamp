@@ -4,7 +4,7 @@ import { Task } from "../../models/task.class";
 import { LEVELS } from '../../models/levels.enum';
 import "../../styles/task.scss"
 
-const TaskComponent = ({ task }) => {
+const TaskComponent = ({ task, completed }) => {
  
 	useEffect(() => {
 		console.log('Created Task')
@@ -54,7 +54,7 @@ const TaskComponent = ({ task }) => {
 	}
 	//*funcion que retorna el swich del icono verde si la action esta hecha y gris si esta sin hacer.
 
-	const taskIconCompleted = () => (task.completed ? <i className="bi-toggle-on" style={{color: 'green'}}></i> : <i className="bi-toggle-off" style ={{color:'grey'}}></i>)
+	const taskIconCompleted = () => (task.completed ? <i onClick={() => completed(task)} className="bi-toggle-on task-action" style={{color: 'green'}}></i> : <i onClick={() => completed (task)} className="bi-toggle-off task-action" style ={{color:'grey'}}></i>)
 	
 	
 	
@@ -73,7 +73,7 @@ const TaskComponent = ({ task }) => {
 		</td>
 		<td className="align-middle">
 		{taskIconCompleted()}
-		<i className="bi-trash" style={{color: 'tomato'}}></i> 
+		<i className="bi-trash task-action" style={{color: 'tomato'}}></i> 
 			
 		</td>
 
@@ -84,6 +84,7 @@ const TaskComponent = ({ task }) => {
 
 TaskComponent.propTypes = {
 	task: PropTypes.instanceOf(Task),
+	completed: PropTypes.func.isRequired
 };
 
 export default TaskComponent;
