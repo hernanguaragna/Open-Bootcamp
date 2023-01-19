@@ -26,7 +26,7 @@ const TaskListComponent = () => {
 	);
 	//*Estado del componente
 
-	const [tasks, settasks] = useState([
+	const [tasks, setTasks] = useState([
         defaultTask1, 
         defaultTask2, 
         defaultTask3]);
@@ -41,8 +41,13 @@ const TaskListComponent = () => {
 		};
 	}, [tasks]);
 
-	function completeTask(Task){
-        console.log('Complit this task',tasks)
+	function completeTask(task){
+        console.log('Complit this task',task)
+        const index = tasks.indexOf(task)
+        const tempTasks = [...tasks]
+        tempTasks[index].completed = !tempTasks[index].completed
+        //*we apdate the state of the component whith the new list and it will update the iteration of the tas in order to show the task updated
+        setTasks(tempTasks)
     }
 
 
