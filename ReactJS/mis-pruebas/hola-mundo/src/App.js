@@ -29,8 +29,8 @@ function App() {
         {/* <GreetingStyled name = "Hernán"></GreetingStyled> */}
       {/* </header> */}
       {/* Gestion de eventos */}
-      <Father />
-      {/* <TaskListComponent /> */}
+      {/* <Father /> */}
+      <TaskListComponent />
     </div>
   );
 }
