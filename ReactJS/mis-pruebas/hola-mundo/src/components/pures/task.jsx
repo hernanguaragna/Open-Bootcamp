@@ -4,7 +4,7 @@ import { Task } from "../../models/task.class";
 import { LEVELS } from '../../models/levels.enum';
 import "../../styles/task.scss"
 
-const TaskComponent = ({ task, completed }) => {
+const TaskComponent = ({ task, completed, deleted }) => {
  
 	useEffect(() => {
 		console.log('Created Task')
@@ -73,7 +73,7 @@ const TaskComponent = ({ task, completed }) => {
 		</td>
 		<td className="align-middle">
 		{taskIconCompleted()}
-		<i className="bi-trash task-action" style={{color: 'tomato'}}></i> 
+		<i onClick={() => deleted (task)} className="bi-trash task-action" style={{color: 'tomato'}}></i> 
 			
 		</td>
 
@@ -84,7 +84,8 @@ const TaskComponent = ({ task, completed }) => {
 
 TaskComponent.propTypes = {
 	task: PropTypes.instanceOf(Task),
-	completed: PropTypes.func.isRequired
+	completed: PropTypes.func.isRequired,
+	deleted: PropTypes.func.isRequired,
 };
 
 export default TaskComponent;

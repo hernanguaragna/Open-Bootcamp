@@ -27,12 +27,13 @@ const TaskListComponent = () => {
 	//*Estado del componente
 
 	const [tasks, setTasks] = useState([
-        defaultTask1, 
-        defaultTask2, 
-        defaultTask3]);
+		defaultTask1,
+		defaultTask2,
+		defaultTask3,
+	]);
 	const [loading, setloading] = useState(true);
 
-	//*Control del Ciclo de vida del componente
+	//*circle life control of the component
 	useEffect(() => {
 		console.log("Task state has benn modified");
 		setloading(false);
@@ -41,15 +42,30 @@ const TaskListComponent = () => {
 		};
 	}, [tasks]);
 
-	function completeTask(task){
-        console.log('Complit this task',task)
-        const index = tasks.indexOf(task)
-        const tempTasks = [...tasks]
-        tempTasks[index].completed = !tempTasks[index].completed
-        //*we apdate the state of the component whith the new list and it will update the iteration of the tas in order to show the task updated
+	function completeTask(task) {
+		console.log("Complit this task", task);
+		const index = tasks.indexOf(task);
+		const tempTasks = [...tasks];
+		tempTasks[index].completed = !tempTasks[index].completed;
+		//*we apdate the state of the component whith the new list and it will update the iteration of the tas in order to show the task updated
+		setTasks(tempTasks);
+	}
+
+    function deleteTask(task){
+        console.log("Complit this task", task);
+		const index = tasks.indexOf(task);
+		const tempTasks = [...tasks];
+        tempTasks.splice(index,1);
+        setTasks(tempTasks)
+
+    }
+    function addTask(task){
+        console.log("Complit this task", task);
+		const index = tasks.indexOf(task);
+		const tempTasks = [...tasks];
+        tempTasks.push(task)
         setTasks(tempTasks)
     }
-
 
 	return (
 		<div>
@@ -77,19 +93,22 @@ const TaskListComponent = () => {
 						<tbody>
 							{/*iterar sobre una lista de tareas */}
 							{tasks.map((task, index) => {
-								return <TaskComponent
-                                 key={index} 
-                                 task={task}
-                                 completed={completeTask}>
-                                    
-                                 </TaskComponent>;
+								return (
+									<TaskComponent
+										key={index}
+										task={task}
+										completed={completeTask}
+                                        deleted={deleteTask}>
+                                        </TaskComponent>
+
+								);
 							})}
 						</tbody>
 					</table>
 				</div>
-                <TaskForm></TaskForm>
 			</div>
-			{/*  TODO aplicar un for/map para renderizar una lista */}
+				<TaskForm add={addTask}></TaskForm>
+			
 		</div>
 	);
 };
