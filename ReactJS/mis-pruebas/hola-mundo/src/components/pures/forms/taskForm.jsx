@@ -25,6 +25,7 @@ const TaskForm = ({add}) => {
            <div className='form-outline flex-fill'>
                 <input ref={nameRef} id='inputName' type='text' className='form-control form-control-lg' required autoFocus placeholder='Task Name'/>
                 <input ref={descriptionRef} id='inputDescription' type='text' className='form-control form-control-lg' required placeholder='Task description'/>
+                {/* <label htmlFor="selectLevel" className='se-only'>Level</label> */}
                 <select className='form-control form-control-lg' ref={levelRef} defaultValue={LEVELS.NORMAL} id='selectLevel'>
                     <option value={LEVELS.NORMAL}>
                         Normal
