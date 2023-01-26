@@ -18,6 +18,7 @@ function ColorChanger() {
 
   return (
     <div
+      
       style={{ width: '255px', height: '255px', backgroundColor: color }}
       onMouseEnter={handleMouseEnter}
       onDoubleClick={handleDoubleClick}
