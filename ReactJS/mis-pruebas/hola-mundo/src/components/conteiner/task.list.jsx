@@ -57,30 +57,11 @@ const TaskListComponent = () => {
 		const tempTasks = [...tasks];
         tempTasks.splice(index,1);
         setTasks(tempTasks)
+	}
 
-    }
-    function addTask(task){
-        console.log("Complit this task", task);
-		const index = tasks.indexOf(task);
-		const tempTasks = [...tasks];
-        tempTasks.push(task)
-        setTasks(tempTasks)
-    }
-
-	return (
-		<div>
-			<div className="col-12">
-				<div className="card">
-					{/* Card Header */}
-					<div className="card-header p-3">
-						<h5>Your Task:</h5>
-					</div>
-					{/* Card Body(Content) */}
-					<div
-						className="card-body"
-						data-mdb-perfect-scrollbar="true"
-						style={{ position: "relative", height: "400px" }}></div>
-					<table>
+	const Table = ()=>{
+		return(
+			<table>
 						<thead>
 							<tr>
 								<th scope="col">Title</th>
@@ -105,6 +86,47 @@ const TaskListComponent = () => {
 							})}
 						</tbody>
 					</table>
+
+		)
+	}
+	
+
+
+function addTask(task){
+	console.log("Complit this task", task);
+	// const index = tasks.indexOf(task);
+	const tempTasks = [...tasks];
+	tempTasks.push(task)
+	setTasks(tempTasks)
+}
+let tasksTable
+if(tasks.length === 0){
+	tasksTable =  <Table />
+}else{
+	tasksTable = 
+	(<div>
+	<h3>There are no tasks to show</h3>
+	<h4>Please, create one</h4>
+	</div>)
+		
+}
+
+	return (
+		<div>
+			<div className="col-12">
+				<div className="card">
+					{/* Card Header */}
+					<div className="card-header p-3">
+						<h5>Your Task:</h5>
+					</div>
+					{/* Card Body(Content) */}
+					<div
+						className="card-body"
+						data-mdb-perfect-scrollbar="true"
+						style={{ position: "relative", height: "400px" }}>
+							{tasksTable}
+
+						</div>
 				</div>
 			</div>
 				<TaskForm add={addTask}></TaskForm>
