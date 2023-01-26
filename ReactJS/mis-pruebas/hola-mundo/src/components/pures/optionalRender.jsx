@@ -25,7 +25,7 @@ const LogoutButton = ({logOutAccion})=>{
 
 
  const OptionalRender = () => {
-    const [access, setAccess] = useState(true);
+    const [access, setAccess] = useState(false);
 
     const [nMessages, setnMessages] = useState(0);
 
@@ -56,6 +56,10 @@ const LogoutButton = ({logOutAccion})=>{
     return (
 			<div>
 				{/** N Messages unread */}
+                {access ? (
+                    
+                    <div>
+
 				{nMessages > 0 && (
 					<span className="badge bg-primary mb-3">
 						{" "}
@@ -74,6 +78,8 @@ const LogoutButton = ({logOutAccion})=>{
 					{nMessages === 0 ? "Add your first message" : "Add another message"}
 				</button>
 				<br />
+                    </div>
+                ) :null}
 				{optionalButton}
 			</div>
 		);
