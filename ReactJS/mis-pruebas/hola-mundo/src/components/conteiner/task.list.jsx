@@ -36,7 +36,11 @@ const TaskListComponent = () => {
 	//*circle life control of the component
 	useEffect(() => {
 		console.log("Task state has benn modified");
-		setloading(false);
+		setTimeout(() => {
+			setloading(false);
+			
+	},2000)
+
 		return () => {
 			console.log("TaskList component is going to unmount...");
 		};
@@ -117,19 +121,21 @@ if(tasks.length > 0){
 				<div className="card">
 					{/* Card Header */}
 					<div className="card-header p-3">
-						<h5>Your Task:</h5>
+						<h5>{tasks.length <= 1 ? "Your Task" : "Your Tasks"}</h5>
 					</div>
 					{/* Card Body(Content) */}
 					<div
 						className="card-body"
 						data-mdb-perfect-scrollbar="true"
 						style={{ position: "relative", height: "400px" }}>
-							{tasksTable}
+							{loading?( <div class="spinner-border text-secondary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>): tasksTable}
 
 						</div>
 				</div>
 			</div>
-				<TaskForm add={addTask}></TaskForm>
+				<TaskForm add={addTask} length={tasks.length} ></TaskForm>
 			
 		</div>
 	);
