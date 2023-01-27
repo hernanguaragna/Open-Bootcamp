@@ -100,13 +100,13 @@ function addTask(task){
 	setTasks(tempTasks)
 }
 let tasksTable
-if(tasks.length === 0){
+if(tasks.length > 0){
 	tasksTable =  <Table />
 }else{
 	tasksTable = 
 	(<div>
 	<h3>There are no tasks to show</h3>
-	<h4>Please, create one</h4>
+	<h4>Please, create one...</h4>
 	</div>)
 		
 }
