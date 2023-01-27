@@ -1,6 +1,7 @@
 import React,{useEffect} from "react";
 import PropTypes from "prop-types";
 import { Task } from "../../models/task.class";
+//*Models
 import { LEVELS } from '../../models/levels.enum';
 import "../../styles/task.scss"
 
@@ -56,29 +57,37 @@ const TaskComponent = ({ task, completed, deleted }) => {
 
 	const taskIconCompleted = () => (task.completed ? <i onClick={() => completed(task)} className="bi-toggle-on task-action" style={{color: 'green'}}></i> : <i onClick={() => completed (task)} className="bi-toggle-off task-action" style ={{color:'grey'}}></i>)
 	
+	const taskCompleted = {
+		color: "gray",
+        textDecoration: "line-through"
+	}
+
+	const taskPending = {
+		color: 'tomato',
+		fontWeight: 'bold'
+	}
 	
 	
 	return (
-		<tr className="fw-normal">
-		<th>
-			<span className="ms-2">{task.name}</span>
-		</th>
-		<td className="align-middle">
-			<span>{task.description}</span>
-
-		</td>
-		<td className="align-middle">
-			{taskIconLevelBadge()}
-
-		</td>
-		<td className="align-middle">
-		{taskIconCompleted()}
-		<i onClick={() => deleted (task)} className="bi-trash task-action" style={{color: 'tomato'}}></i> 
+		<tr
+			className="fw-normal"
+			style={task.completed ? taskCompleted : taskPending}>
 			
-		</td>
-
+			<th>
+				<span className="ms-2">{task.name}</span>
+			</th>
+			<td className="align-middle">
+				<span>{task.description}</span>
+			</td>
+			<td className="align-middle">{taskIconLevelBadge()}</td>
+			<td className="align-middle">
+				{taskIconCompleted()}
+				<i
+					onClick={() => deleted(task)}
+					className="bi-trash task-action"
+					style={{ color: "tomato" }}></i>
+			</td>
 		</tr>
-		
 	);
 };
 
