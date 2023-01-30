@@ -20,7 +20,7 @@ const TaskForm = ({add,length}) => {
 		add(newTask);
         clearInputs();
 	}
-	//funcion que limpie los inputs
+	//*funcion que limpie los inputs
 
    function clearInputs() {
     nameRef.current.value = '';
