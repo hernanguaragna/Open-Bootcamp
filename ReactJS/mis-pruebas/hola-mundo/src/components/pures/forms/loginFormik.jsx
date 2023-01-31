@@ -60,9 +60,9 @@ const Loginformik = () => {
                             {
                                 errors.email && touched.email && 
                                 (
-                                    <div>
-                                        <ErrorMessage name="email" ></ErrorMessage>
-                                    </div>
+                                    
+                                        <ErrorMessage name="email" component= 'div'></ErrorMessage>
+                                    
                                     
                                 )
                             }
@@ -78,10 +78,7 @@ const Loginformik = () => {
                             {
                                 errors.password && touched.password && 
                                 (
-                                    <div>
-                                        <ErrorMessage name="password"></ErrorMessage> 
-                                    </div>
-                                   
+                                    <ErrorMessage name="password" component='div'></ErrorMessage>
                                 )
                             }
                             <button type="submit">Login</button>
