@@ -60,7 +60,10 @@ const Loginformik = () => {
                             {
                                 errors.email && touched.email && 
                                 (
-                                    <ErrorMessage name="email" component='div'></ErrorMessage>
+                                    <div>
+                                        <ErrorMessage name="email" ></ErrorMessage>
+                                    </div>
+                                    
                                 )
                             }
 
