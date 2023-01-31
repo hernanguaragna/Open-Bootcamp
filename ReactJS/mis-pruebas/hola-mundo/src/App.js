@@ -5,7 +5,7 @@ import './App.css';
 //import Greeting from './components/pures/greeting';
 //import GreetingF from './components/pures/greetingF';
 // import TaskListComponent from './components/conteiner/task.list';
-import LoginFormik from './components/pures/forms/loginFormik';
+import Loginformik from './components/pures/forms/loginFormik';
 // import OptionalRender from './components/pures/optionalRender';
 // import GreetingStyled from './components/pures/greetingStyled';
 // import Ejemplo1 from './hooks/Ejemplo1';
@@ -36,7 +36,7 @@ function App() {
       {/* <OptionalRender /> */}
       {/* <TaskListComponent /> */}
       {/* Ejemplos de uso de formik yup */}
-      <LoginFormik/>
+      <Loginformik/>
     </div>
   );
 }

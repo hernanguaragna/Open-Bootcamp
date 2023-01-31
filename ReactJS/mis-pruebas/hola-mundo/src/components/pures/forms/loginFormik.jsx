@@ -1,67 +1,92 @@
-import React from "react";
-import { Formik, Form, Field } from "formik";
-import * as Yup from "yup";
+import React from 'react';
+// import { useHistory } from 'react-router-dom';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 
-const loginSchema = Yup.object().shape({
-	email: Yup.string().email("Invalid email address").required("Required"),
-	password: Yup.string()
-		.min(8, "Password must be at least 8 characters")
-		.email("Invalid email address")
-		.required("Required"),
-});
 
-const LoginFormik = () => {
-	const initialCredentials = {
-		email: "",
-		password: "",
-	};
-	return (
-		<div>
-			<h4>Login Formik</h4>
-			<Formik
-				//*Initial values that the form required
-				initialValues={initialCredentials}
-				//*Yup validation schema
-				validationSchema={loginSchema}
-				//*On submit Event
-				onSubmit={async (values) => {
-					await new Promise((r) => setTimeout(r, 500));
-					alert(JSON.stringify(values, null, 2));
-				}}>
-				{/* we obtain props from Formik  */}
-				{(props) => {
-					const { values, touched, errors, isSubmitting } = props;
+const loginSchema = Yup.object().shape(
+    {
+        email: Yup.string()
+                .email('Invalid email format')
+                .required('Email is required'),
+        password: Yup.string()
+                .required('Password is required')
+    }
+);
 
-					return (
-						<Form>
-							<label htmlFor="email">E-mail</label>
-							<Field
-								id="email"
-								name="email"
-								placeholder="ejample@email.com"
-								type="email"
-							/>
+
+const Loginformik = () => {
+
+    const initialCredentials = {
+        email: '',
+        password: ''
+    }
+
+    // const history = useHistory();
+
+    return (
+        <div>
+            <h4>Login Formik</h4>
+            <Formik
+                // *** Initial values that the form will take
+                initialValues = { initialCredentials }
+                // *** Yup Validation Schema ***
+                validationSchema = {loginSchema}
+                // ** onSubmit Event
+                onSubmit={async (values, { resetForm }) => {
+                    await new Promise((r) => setTimeout(r, 1000));
+                    alert(JSON.stringify(values, null, 2));
+                    // We save the data in the localstorage
+                    await localStorage.setItem('credentials', values);
+                    // history.push('/profile');
+                    // Reset the form values
+                resetForm({ values: initialCredentials });
+                }}
+                
+            >
+                {/* We obtain props from Formik */}
+                
+                {({ values,
+                    touched,
+                    errors,
+                    isSubmitting,
+                    handleChange,
+                    handleBlur }) => (
+                        <Form>
+                            <label htmlFor="email">Email</label>
+                            <Field id="email" type="email" name="email" placeholder="example@email.com" />
+
                             {/* Email Errors */}
-							{errors.email && touched.email && (
-								<div className="error">
-									<p> {errors.email} </p>
-								</div>
-							)}
-							<label htmlFor="password">Password</label>
-							<Field
-								id="password"
-								name="password"
-								placeholder="Your password"
-								type="password"
-							/>
+                            {
+                                errors.email && touched.email && 
+                                (
+                                    <ErrorMessage name="email" component='div'></ErrorMessage>
+                                )
+                            }
 
-							<button type="submit">Submit</button>
-						</Form>
-					);
-				}}
-			</Formik>
-		</div>
-	);
-};
+                            <label htmlFor="password">Password</label>
+                            <Field
+                                id="password"
+                                name="password"
+                                placeholder="password"
+                                type='password'
+                            />
+                            {/* Password Errors */}
+                            {
+                                errors.password && touched.password && 
+                                (
+                                    <ErrorMessage name="password" component='div'></ErrorMessage>
+                                )
+                            }
+                            <button type="submit">Login</button>
+                            {isSubmitting ? (<p>Login your credentials...</p>): null}
+                        </Form>
+                )}
+            </Formik>
+        </div>
+    );
+}
 
-export default LoginFormik;
+export default Loginformik;
+
+
