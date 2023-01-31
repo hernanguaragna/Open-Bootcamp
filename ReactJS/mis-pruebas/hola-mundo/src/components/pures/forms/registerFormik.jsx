@@ -84,7 +84,7 @@ const Registerformik = () => {
 							</div>
 
 							<div className="form-group mb-3">
-								<label htmlFor="email">Email</label>
+								<label htmlFor="email">Emai</label>
 								<Field
 									id="email"
 									type="email"
