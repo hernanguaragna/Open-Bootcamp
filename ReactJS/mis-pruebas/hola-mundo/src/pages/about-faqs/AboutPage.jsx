@@ -7,7 +7,7 @@ const AboutPage = () => {
     // const location = useLocation();
     const navigate = useNavigate()
     const foward = (path) => {
-			navigate.push(path);
+			navigate.push(path)
 		}
     const back = () => foward(-1);
     
