@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-const Profilepage = ({user}) => {
+const ProfilPage = ({user}) => {
 
     const history = useHistory();
 
@@ -23,5 +23,5 @@ const Profilepage = ({user}) => {
     );
 }
 
-export default Profilepage;
+export default ProfilPage;
 

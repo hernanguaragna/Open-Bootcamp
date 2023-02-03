@@ -1,16 +1,16 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
 
 import HomePage from './pages/home/HomePage';
-import Statepage from './pages/home/StatePage';
+// import Statepage from './pages/home/StatePage';
 
-import Notfoundpage from './pages/404/NotFoundPage';
-import Aboutpage from './pages/about-faqs/AboutPage';
-import Profilepage from './pages/profile/ProfilePage';
-import Taskspage from './pages/tasks/TasksPage';
-import Taskdetailpage from './pages/tasks/TaskDetailPage';
-import Loginpage from './pages/auth/LoginPage';
+import NotFoundPage from './pages/404/NotFoundPage';
+import AboutPage from "./pages/about-faqs/AboutPage";
+import ProfilePage from './pages/profiles/ProfilePage';
+import TaskPage from './pages/tasks/TaskPage';
+import TaskDetailPage from './pages/tasks/TaskDatailPage';
+import LoginPage from './pages/auth/LoginPage';
 
 function AppRoutingOne() {
 
@@ -29,10 +29,10 @@ function AppRoutingOne() {
     }
   ]
 
-  useEffect(() => {
-    logged = localStorage.getItem('credentials');
-    console.log('User Logged?', logged)
-  }, [])
+  // useEffect(() => {
+  //   logged = localStorage.getItem('credentials');
+  //   console.log('User Logged?', logged)
+  // }, [])
 
   return (
     <Router>
@@ -50,8 +50,8 @@ function AppRoutingOne() {
         <main>
           <Switch> 
             <Route exact path='/' component={ HomePage } />
-            <Route exact path='/online-state' component={ Statepage } />
-            <Route path='/login' component= { Loginpage }>
+            {/* <Route exact path='/online-state' component={ Statepage } /> */}
+            <Route path='/login' component= { LoginPage }>
               {
                   logged ? 
                     () => {
@@ -60,15 +60,15 @@ function AppRoutingOne() {
                     }
                   :
                   () => {
-                    return (<Loginpage></Loginpage>)
+                    return (<LoginPage></LoginPage>)
                   }
               }
             </Route>
-            <Route path='/(about|faqs)' component={ Aboutpage } />
-            <Route path='/profile' component={ Profilepage }>
+            <Route path='/(about|faqs)' component={ AboutPage } />
+            <Route path='/profile' component={ ProfilePage }>
               {
                 logged ? 
-                <Profilepage />
+                <ProfilePage />
                 :
                 () => {
                   alert('You must be logged in. Redirecting to login...')
@@ -76,18 +76,18 @@ function AppRoutingOne() {
                 }
               }
             </Route>
-            <Route path='/tasks' component={ Taskspage } />
+            <Route path='/tasks' component={ TaskPage } />
             <Route 
               exact
               path='/task/:id'
               render = {
-                ({match}) => (<Taskdetailpage task={taskList[match.params.id-1]} />)
+                ({match}) => (<TaskDetailPage task={taskList[match.params.id-1]} />)
               }
               >
 
             </Route>
             {/* 404 - Page No Found */}
-            <Route component={ Notfoundpage } />
+            <Route component={ NotFoundPage } />
           </Switch>
         </main>
 

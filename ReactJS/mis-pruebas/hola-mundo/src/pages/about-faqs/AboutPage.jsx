@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useLocation, useHistory } from 'react-router-dom';
 
-const Aboutpage = () => {
+const AboutPage = () => {
 
     const location = useLocation();
     const history = useHistory();
@@ -41,5 +41,5 @@ const Aboutpage = () => {
     );
 }
 
-export default Aboutpage;
+export default AboutPage;
 

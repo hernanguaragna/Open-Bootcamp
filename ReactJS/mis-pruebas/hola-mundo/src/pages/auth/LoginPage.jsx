@@ -1,5 +1,5 @@
 import React from 'react';
-import Loginformik from '../../components/pure/forms/loginFormik';
+import Loginformik from '../../components/pures/forms/loginFormik';
 
 const Loginpage = () => {
     return (
