@@ -1,4 +1,7 @@
 {
     "CodeGPT.maxTokens": 2000,
-    "CodeGPT.query.language": "Spanish"
+    "CodeGPT.query.language": "Spanish",
+    "cSpell.words": [
+        "Statepage"
+    ]
 }

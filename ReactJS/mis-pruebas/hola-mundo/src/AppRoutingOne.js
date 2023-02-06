@@ -9,7 +9,7 @@ import NotFoundPage from './pages/404/NotFoundPage';
 import AboutPage from "./pages/about-faqs/AboutPage";
 import ProfilePage from './pages/profiles/ProfilePage';
 import TaskPage from './pages/tasks/TaskPage';
-import TaskDetailPage from './pages/tasks/TaskDatailPage';
+import TaskDetailPage from './pages/tasks/TaskDetailPage';
 import LoginPage from './pages/auth/LoginPage';
 
 function AppRoutingOne() {
