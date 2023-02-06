@@ -1,7 +1,7 @@
 // import { useEffect } from 'react';
 
 import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom';
-import { Button } from '@mui/material';
+import Dashboardpage from './pages/dashboard/DashBoard';
 
 
 function AppRoutingFinal() {
@@ -10,7 +10,7 @@ function AppRoutingFinal() {
 
   return (
     <div>
-      <Button variant="contained">Contained</Button>
+<Dashboardpage />
     </div>
   );
 }

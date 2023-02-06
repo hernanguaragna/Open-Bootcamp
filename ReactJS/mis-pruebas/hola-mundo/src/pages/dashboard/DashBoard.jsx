@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 
-import Copyright from '../../components/pure/Copyright';
+import Copyright from '../../components/pures/Copyright';
 
 const Dashboardpage = () => {
 
