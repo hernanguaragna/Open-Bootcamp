@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 
 import Copyright from '../../components/pures/Copyright';
 
-const Dashboardpage = () => {
+const DashboardPage = () => {
 
     const history = useHistory();
 
@@ -21,4 +21,4 @@ const Dashboardpage = () => {
     );
 }
 
-export default Dashboardpage;
+export default DashboardPage;

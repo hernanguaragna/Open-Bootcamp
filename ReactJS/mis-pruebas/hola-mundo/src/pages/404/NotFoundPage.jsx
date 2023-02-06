@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-const Notfoundpage = () => {
+const NotFoundPage = () => {
 
     const history = useHistory();
 
@@ -19,4 +19,4 @@ const Notfoundpage = () => {
     );
 }
 
-export default Notfoundpage;
+export default NotFoundPage;
