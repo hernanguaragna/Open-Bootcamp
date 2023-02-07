@@ -7,7 +7,8 @@ import NotFoundPage from './pages/404/NotFoundPage';
 
 
 function AppRoutingFinal() {
-
+  
+//TODO change to value from sessionstorage for someting more dinamic
  let loggedIn = true;
 
   return (
@@ -22,8 +23,10 @@ function AppRoutingFinal() {
 							<Redirect from="/" to="/login/" />
 						)}
 					</Route>
+
 					{/* Login routes  */}
 					<Route exact path="/login" component={LoginPage} />
+
 					{/* Dashboard routes  */} 
 					<Route exact path="/dashboard">
 						{loggedIn ? (
@@ -32,6 +35,7 @@ function AppRoutingFinal() {
 							<Redirect from="/" to="/login/" />
 						)}
 					</Route>
+
           {/* Not found */}
 					<Route component={NotFoundPage} />
 				</Switch>

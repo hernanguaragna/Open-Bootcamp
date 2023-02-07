@@ -12,7 +12,7 @@ const NotFoundPage = () => {
     return (
         <div>
             <h1>404 - Page Not Found</h1>
-            <button onClick={() => navigateTo('/')}>
+            <button onClick={() => navigateTo('/login')}>
                 Go back to home
             </button>
         </div>
