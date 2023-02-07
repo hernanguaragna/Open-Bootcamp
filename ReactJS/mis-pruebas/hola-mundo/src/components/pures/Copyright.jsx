@@ -6,15 +6,17 @@ import Typography from '@mui/material/Typography';
 
 const Copyright = () => {
     return (
-        <Typography variant="body2" color="GrayText" align="center">
-            { 'Copyright (C) '}
-            <Link color="inherit" href='https://hernanguaragna.github.io/porfolio-resume/#portfolio'>
-                Hernán Guaragna
-            </Link>
-            { ' ' }
-            { new Date().getFullYear() }
-        </Typography>
-    );
+			<Typography variant="body2" color="GrayText" align="center">
+				{"Copyright (C) "}
+				<Link
+					color="inherit"
+					href="https://hernanguaragna.github.io/porfolio-resume/#portfolio"
+					target="_blank">
+					Hernán Guaragna
+				</Link>{" "}
+				{new Date().getFullYear()}
+			</Typography>
+		);
 }
 
 export default Copyright;
