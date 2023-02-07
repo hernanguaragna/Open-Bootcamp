@@ -1,10 +1,12 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { useHistory } from 'react-router-dom';
 
 // Models
 import { ROLES } from '../../../models/roles.enum';
 import { User } from '../../../models/user.class';
+
 
 const Registerformik = () => {
 
@@ -47,7 +49,14 @@ const Registerformik = () => {
     const submit = (values) => {
         alert('Register user')
     }
+	////
+	//?Function for when on clik in the button Register Account redirect to /login
+	const history = useHistory();
 
+    const isRegister = () => {
+        history.push('/task');
+    }
+/////
     return (
 			<div>
 				<h4>Register Formik</h4>
@@ -84,7 +93,7 @@ const Registerformik = () => {
 							</div>
 
 							<div className="form-group mb-3">
-								<label htmlFor="email">Emai</label>
+								<label htmlFor="email">Email</label>
 								<Field
 									id="email"
 									type="email"
@@ -125,10 +134,10 @@ const Registerformik = () => {
 								)}
 							</div>
 
-							<button type="submit" className="btn btn-primary mt-2">
+							<button  type="submit" onClick={isRegister} className="btn btn-primary mt-2">
 								Register Account
 							</button>
-							{isSubmitting ? <p>Sending your credentials...</p> : null}
+							{isSubmitting ? <p>Sending your credentials...</p>: null}
 						</Form>
 					)}
 				</Formik>

@@ -2,6 +2,7 @@ import React from 'react';
 // import { useHistory } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { useHistory } from 'react-router-dom';
 
 
 const loginSchema = Yup.object().shape(
@@ -22,7 +23,15 @@ const Loginformik = () => {
         password: ''
     }
 
-    // const history = useHistory();
+   
+    ////
+	//?Function for when on clik in the button Register Account redirect to /login
+	const history = useHistory();
+
+    const isLogin = () => {
+        history.push('/login');
+    }
+/////
 
     return (
         <div>
@@ -53,6 +62,7 @@ const Loginformik = () => {
                     handleChange,
                     handleBlur }) => (
                         <Form>
+                        <div className="form-group mb-3">
                             <label htmlFor="email">Email</label>
                             <Field id="email" type="email" name="email" placeholder="example@email.com" />
 
@@ -66,7 +76,9 @@ const Loginformik = () => {
                                     
                                 )
                             }
+                        </div>
 
+                        <div className="form-group mb-3">
                             <label htmlFor="password">Password</label>
                             <Field
                                 id="password"
@@ -81,7 +93,11 @@ const Loginformik = () => {
                                     <ErrorMessage name="password" component='div'></ErrorMessage>
                                 )
                             }
-                            <button type="submit">Login</button>
+                        </div>
+                           
+
+                           
+                            <button type="submit" onClick={isLogin} className="btn btn-primary mt-2">Login</button>
                             {isSubmitting ? (<p>Login your credentials...</p>): null}
                         </Form>
                 )}
