@@ -42,7 +42,7 @@ const AsyncExample = () => {
 
     const urlNotFound = async () => {
         try{
-            let response = await fetch("https://invalidURL")
+            let response = await fetch("https://invalidURL.com")
             alert(`Response ${JSON.stringify(response)}`)
         } catch(error){
             alert(`Something went wrong ${error}`)
@@ -50,12 +50,26 @@ const AsyncExample = () => {
         
     }
     
+    const multiplePromise = () => {
+        let result = new Promise.all(
+            [
+                fetch("https://reqres.in/api/users"),
+                fetch("https://reqres.in/api/users?page=2"),
+
+            ]
+            
+            ).catch((error)=>{
+                alert(`Something went wrong ${error}`)
+            })        
+    };
+
     return (
 			<div>
 				<button onClick={showStorage}>Save and show Name</button>
 				<button onClick={obtainMessage}>Receive Message</button>
 				<button onClick={consumeError}>Consume Error</button>
 				<button onClick={urlNotFound}>URL not found</button>
+				<button onClick={multiplePromise}>Multiple Promise</button>
 			</div>
 		);
 }
