@@ -14,7 +14,7 @@ function AppRoutingFinal() {
 //TODO change to value from sessionstorage for someting more dinamic
  let loggedIn = true;
  let isRegister = false;
- let isLogin = false;
+//  let isLogin = false;
 
   return (
 		<div>

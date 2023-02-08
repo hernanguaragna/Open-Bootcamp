@@ -38,7 +38,9 @@ function App() {
 			{/* <TaskListComponent /> */}
 			{/* Ejemplos de uso de formik yup */}
 			{/* <Loginformik/> */}
-			<RegisterFormik />
+			{/* <RegisterFormik /> */}
+			{/* *Ejemplos de procesos asincronos */}
+			
 		</div>
 	);
 }
