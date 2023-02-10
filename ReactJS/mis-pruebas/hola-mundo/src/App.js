@@ -41,7 +41,7 @@ function App() {
 			{/* <Loginformik/> */}
 			{/* <RegisterFormik /> */}
 			{/* *Ejemplos de procesos asincronos */}
-			<Observableexample />
+			{/* <Observableexample /> */}
 			
 		</div>
 	);

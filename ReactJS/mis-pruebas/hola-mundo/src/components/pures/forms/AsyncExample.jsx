@@ -1,77 +1,99 @@
-import { Try } from '@mui/icons-material';
 import React from 'react';
 
-const AsyncExample = () => {
+const Asyncexample = () => {
 
- 
-
-
-    async function saveSessionStorage(key,value){
-        await sessionStorage.setItem(key, value);
-        return Promise.resolve(sessionStorage.getItem(key));
+    
+    async function generateNumber(){
+        return 1; 
     }
+
+    async function generatePromiseNumber(){
+        return Promise.resolve(2)
+    }
+
+    function obtainNumber(){
+        generateNumber()
+            .then((response) => alert(`Response: ${response}`))
+            .catch((error) => alert(`Something went wrong: ${error}`));
+    }
+
+    function obtainPromiseNumber(){
+        generatePromiseNumber()
+            .then((response) => alert(`Response: ${response}`))
+            .catch((error) => alert(`Something went wrong: ${error}`));
+    }
+    
+    async function saveSessionStorage(key, value) {
+        sessionStorage.setItem(key, value);
+        return Promise.resolve(sessionStorage.getItem(key))
+    }
+
     function showStorage(){
-        saveSessionStorage("name", "John")
-        .then((response)=>{
-            let value = response;
-            alert (`Save name${value}`)
-        }).catch((error)=>{
-            alert(`Something went wrong ${error}`);
-        }).finally(()=>console.log("Done"));
-        }
+        saveSessionStorage('name', 'Martín')
+            .then((response) => {
+                let value = response;
+                alert(`Saved Name: ${value}`);
+            }).catch((error) => {
+                alert(`Something went wrong: ${error}`)
+            }).finally(() => {
+                alert('SUCCESS: Name saved and retreived')
+            })
+    }
 
     async function obtainMessage(){
-        let promise = new Promise((resolve, reject)=>{
-            setTimeout(() => 
-							resolve("Hello"), 3000);
-        })
-        let messege = await promise;
 
-        await alert(`Messege ${messege}`);
-    }  
-    
-    const returnError = () => {
-        return Promise.reject(new Error("Oooooops!"))
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(() => resolve('Hello World'), 2000)
+        });
+
+        let message = await promise;
+
+        await alert(`Message received: ${message}`)
+
     }
+
+    const returnError = async() => {
+        await Promise.reject(new Error('Oooops!'));
+    }
+
     const consumeError = () => {
         returnError()
-        .then((response)=>alert(`Everythings go fine${response}`))
-        .catch((error)=>alert(`Something went wrong ${error}`))
-        .finally(()=>console.log("Done"));
+            .then((response) => alert(`Everything is OK: ${response}`))
+            .catch((error) => alert(`Something went wrong: ${error}`))
+            .finally(() => alert('Finally executed'))
     }
 
     const urlNotFound = async () => {
-        try{
-            let response = await fetch("https://invalidURL.com")
-            alert(`Response ${JSON.stringify(response)}`)
-        } catch(error){
-            alert(`Something went wrong ${error}`)
+        try {
+            let response = await fetch('https://invalidURL.com');
+            alert(`Response: ${JSON.stringify(response)}`)
+        } catch (error) {
+            alert(`Something went wrong with your URL: ${error} (check your console)`)
         }
-        
     }
-    
-    const multiplePromise = () => {
-        let result = new Promise.all(
-            [
-                fetch("https://reqres.in/api/users"),
-                fetch("https://reqres.in/api/users?page=2"),
 
+    const multiplePromise = async () => {
+        let results = await Promise.all(
+            [
+                fetch('https://reqres.in/api/users'),
+                fetch('https://reqres.in/api/users?page=2')
             ]
-            
-            ).catch((error)=>{
-                alert(`Something went wrong ${error}`)
-            })        
-    };
+        ).catch((error) => alert(`Something went wrong with your URLs: ${error} (check your console)`))
+    }
+
 
     return (
-			<div>
-				<button onClick={showStorage}>Save and show Name</button>
-				<button onClick={obtainMessage}>Receive Message</button>
-				<button onClick={consumeError}>Consume Error</button>
-				<button onClick={urlNotFound}>URL not found</button>
-				<button onClick={multiplePromise}>Multiple Promise</button>
-			</div>
-		);
+        <div>
+            <h1>Async, Promise Examples</h1>
+            <button onClick={obtainNumber}>Obtain Number</button>
+            <button onClick={obtainPromiseNumber}>Obtain Promise Number</button>
+            <button onClick={showStorage}>Save Name and Show</button>
+            <button onClick={obtainMessage}>Receive message in 2 seconds</button>
+            <button onClick={consumeError}>Obtain Error</button>
+            <button onClick={urlNotFound}>Request to Unknown URL</button>
+            <button onClick={multiplePromise}> Multiple Promises </button>
+        </div>
+    );
 }
 
-export default AsyncExample;
+export default Asyncexample;
