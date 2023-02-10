@@ -1,12 +1,13 @@
 // import logo from './logo.svg';
 import './App.css';
+// import Observableexample from './components/pures/forms/ObservableExample';
 // import Father from './components/conteiner/father';
 // import Ejemplo2 from './hooks/Ejemplo2';
 //import Greeting from './components/pures/greeting';
 //import GreetingF from './components/pures/greetingF';
 // import TaskListComponent from './components/conteiner/task.list';
 // import Loginformik from './components/pures/forms/loginFormik';
-import RegisterFormik from './components/pures/forms/registerFormik';
+// import RegisterFormik from './components/pures/forms/registerFormik';
 // import OptionalRender from './components/pures/optionalRender';
 // import GreetingStyled from './components/pures/greetingStyled';
 // import Ejemplo1 from './hooks/Ejemplo1';
@@ -40,6 +41,7 @@ function App() {
 			{/* <Loginformik/> */}
 			{/* <RegisterFormik /> */}
 			{/* *Ejemplos de procesos asincronos */}
+			<Observableexample />
 			
 		</div>
 	);
