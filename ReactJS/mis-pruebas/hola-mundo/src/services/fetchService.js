@@ -1,11 +1,5 @@
-import React from 'react';
-
-const FetchService = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+export const getAllUsers = async () =>{
+    let response = await fetch('https://reqres.in/api/users')
+    //we return the json
+    return response.json()
 }
-
-export default FetchService;
