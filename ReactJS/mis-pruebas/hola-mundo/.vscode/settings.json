@@ -3,5 +3,14 @@
     "CodeGPT.query.language": "Spanish",
     "cSpell.words": [
         "Statepage"
-    ]
+    ],
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingDelete": "always",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "workbench.preferredHighContrastLightColorTheme": "Glowfish Light (rainglow)",
+    "workbench.preferredDarkColorTheme": "Dobri Next -C02- Indigo",
+    "workbench.preferredHighContrastColorTheme": "Dobri Next -C02- Indigo",
+    "workbench.preferredLightColorTheme": "Goldfish Light (rainglow)",
+    "workbench.sideBar.location": "right",
+    "editor.fontFamily": "Fira Code"
 }
